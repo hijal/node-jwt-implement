@@ -16,6 +16,7 @@ const todos = [
   },
 ];
 router.get("/", auth, (req, res, next) => {
+  res.header('auth-token', req.token);
   res.json({
     todos: todos,
     user: req.user,

@@ -46,10 +46,11 @@ router.post("/login", async (req, res, next) => {
 });
 
 router.post("/signup", (req, res, next) => {
-  const fullName = req.body.fullName;
-  const email = req.body.email;
-  const phone = req.body.phone;
-  const password = req.body.password;
+  // const fullName = req.body.fullName;
+  // const email = req.body.email;
+  // const phone = req.body.phone;
+  // const password = req.body.password;
+  const {fullName, email, phone, password} = req.body;
   bcrypt
     .hash(password, 10)
     .then((hashedPass) => {
